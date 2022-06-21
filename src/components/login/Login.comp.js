@@ -52,6 +52,6 @@ LoginForm.propTypes={
   handleOnchange: PropTypes.func.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
   formSwitcher: PropTypes.func.isRequired,
-   email: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   pass: PropTypes.string.isRequired
 };
