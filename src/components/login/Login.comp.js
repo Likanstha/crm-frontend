@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Row, Col, Form, Button} from 'react-bootstrap';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-export const LoginForm = ({handleOnchange,handleOnSubmit,formSwitcher,email,pass}) => {
+export const LoginForm = ({handleOnchange, handleOnSubmit, formSwitcher, email, pass}) => {
   return (
     <Container>
       <Row>
