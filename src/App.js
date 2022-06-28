@@ -1,16 +1,15 @@
 
 import './App.css';
-import { DefaultLayout } from './layout/DefaultLayout';
+
 import { Entry } from './pages/entry/Entry.page';
 import {Dashboard} from './pages/dashboard/Dashboard.page';
 import { AddTicket } from './pages/new-ticket/AddTicket.page';
 import { TicketLists } from './pages/ticket-list/TicketLists.page';
 import { Ticket } from './pages/ticket/Ticket.page'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+  BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
+
+import {PrivateRoute} from './components/private-route/PrivateRoute.comp'
 
 function App() {
   return (
@@ -22,23 +21,23 @@ function App() {
           <Route exact path="/">
           <Entry />
           </Route>
-          <DefaultLayout>
-          <Route path="/dashboard">
+          
+          <PrivateRoute path="/dashboard">
           <Dashboard />
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/add-ticket">
+          <PrivateRoute path="/add-ticket">
           <AddTicket />
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/tickets">
+          <PrivateRoute path="/tickets">
           <TicketLists />
-          </Route>
-          <Route path="/ticket/:tid">
+          </PrivateRoute>
+          <PrivateRoute path="/ticket/:tId">
           <Ticket />
-          </Route>
+          </PrivateRoute>
         
-          </DefaultLayout>
+          
           {/* <Route path="/">
           <Entry />
           </Route> */}
