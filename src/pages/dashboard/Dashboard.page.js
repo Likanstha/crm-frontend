@@ -21,7 +21,7 @@ export const Dashboard = () =>{
                     variant="info" 
                     style={{fontSize:"2rem",padding:"10px 30px"}}
                     >
-                        Add new Ticket
+                        Add New Ticket
                     </Button>
                     </Link>
                 </Col>

@@ -6,11 +6,17 @@ import {TicketTable} from "../../components/ticket-table/TicketTable.comp";
 import tickets from "../../assets/data/dummy-tickets.json"
 import { Link } from 'react-router-dom'
 
+import { useDispatch } from "react-redux";
+import { fetchAllTickets } from "./ticketsAction";
+
 export const TicketLists = () => {
 const [str, setStr]=useState("");
-const [ displayTicket, setDispTicket]=useState(tickets);
-   
-useEffect(()=>{},[str,displayTicket]);
+// const [ displayTicket, setDispTicket]=useState(tickets);
+const dispatch = useDispatch();
+
+useEffect(()=>{
+    dispatch(fetchAllTickets());
+},[str,dispatch]);
 
 const handleOnChange=(e)=>{
     const {value} =e.target;
@@ -22,7 +28,7 @@ const searchTicket = (strr) =>{
     const displayTickets= tickets.filter(row=> 
     row.subject.toLowerCase().includes(strr.toLowerCase()));
     //console.log(displayTickets);
-    setDispTicket(displayTickets);
+   // setDispTicket(displayTickets);
 };
 
   return (
@@ -34,19 +40,20 @@ const searchTicket = (strr) =>{
         </Row>
         <Row className='mt-4'>
             <Col>
-            <Link to ="/add-ticket">
+            <Link to ="/add-ticket/">
             <Button variant="info">Add New Ticket</Button></Link>
             </Col>
             <Col className="text-right">
-                <SearchForm 
-                handleOnChange={handleOnChange}
-                str={str}/>
+               
+                <SearchForm />
             </Col>
         </Row>
         <hr />
+        <hr />
         <Row>
             <Col>
-            <TicketTable tickets={displayTicket}/>
+           
+            <TicketTable/>
             </Col>
         </Row>
 
@@ -54,3 +61,8 @@ const searchTicket = (strr) =>{
 
   )
 }
+// <TicketTable tickets={displayTicket}/>
+
+// <SearchForm 
+//handleOnChange={handleOnChange}
+//str={str}/>
