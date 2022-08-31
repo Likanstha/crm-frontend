@@ -3,7 +3,7 @@ import { Container,Row,Col,Button } from 'react-bootstrap'
 import {PageBreadcrumb} from "../../components/breadcrumb/Breadcrumb.comp";
 import {SearchForm} from '../../components/search-form/SearchForm.comp'
 import {TicketTable} from "../../components/ticket-table/TicketTable.comp";
-import tickets from "../../assets/data/dummy-tickets.json"
+//import tickets from "../../assets/data/dummy-tickets.json"
 import { Link } from 'react-router-dom'
 
 import { useDispatch } from "react-redux";
@@ -18,18 +18,18 @@ useEffect(()=>{
     dispatch(fetchAllTickets());
 },[str,dispatch]);
 
-const handleOnChange=(e)=>{
-    const {value} =e.target;
-    setStr(value);
-    searchTicket(value);
-};
+// const handleOnChange=(e)=>{
+//     const {value} =e.target;
+//     setStr(value);
+//     searchTicket(value);
+// };
 
-const searchTicket = (strr) =>{
-    const displayTickets= tickets.filter(row=> 
-    row.subject.toLowerCase().includes(strr.toLowerCase()));
-    //console.log(displayTickets);
-   // setDispTicket(displayTickets);
-};
+// const searchTicket = (strr) =>{
+//     const displayTickets= tickets.filter(row=> 
+//     row.subject.toLowerCase().includes(strr.toLowerCase()));
+//     //console.log(displayTickets);
+//    // setDispTicket(displayTickets);
+// };
 
   return (
     <Container>
